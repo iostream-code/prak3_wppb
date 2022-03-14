@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Monkasel Surabaya',
       theme: ThemeData(
-        fontFamily: 'Maven Pro',
+        fontFamily: 'MavenPro',
       ),
       home: const MainScreen(),
     );

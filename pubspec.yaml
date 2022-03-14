@@ -64,9 +64,21 @@ flutter:
     - assets/images/monkasel_2.png
     - assets/images/monkasel_3.jpg
     - assets/images/alun_0.jpg
+    - assets/images/alun_1.jpg
+    - assets/images/alun_2.jpeg
+    - assets/images/alun_3.jpeg
     - assets/images/kenpark_0.jpg
+    - assets/images/kenpark_1.jpg
+    - assets/images/kenpark_2.jpg
+    - assets/images/kenpark_3.jpg
     - assets/images/samporna_0.jpg
+    - assets/images/samporna_1.jpg
+    - assets/images/samporna_2.jpg
+    - assets/images/samporna_3.jpg
     - assets/images/tupal_0.jpg
+    - assets/images/tupal_1.jpg
+    - assets/images/tupal_2.jpg
+    - assets/images/tupal_3.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
@@ -80,9 +92,14 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-  - family: Maven Pro
+  - family: MavenPro
     fonts:
       - asset: assets\fonts\MavenPro-Regular.ttf
+      - asset: assets\fonts\MavenPro-Black.ttf
+      - asset: assets\fonts\MavenPro-Bold.ttf
+      - asset: assets\fonts\MavenPro-ExtraBold.ttf
+      - asset: assets\fonts\MavenPro-Medium.ttf
+      - asset: assets\fonts\MavenPro-SemiBold.ttf
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

@@ -20,7 +20,7 @@ class DetailScreen extends StatelessWidget {
                 place.name,
                 textAlign: TextAlign.center,
                 style: const TextStyle(
-                  fontFamily: 'Maven Pro',
+                  fontFamily: 'MavenPro',
                   fontSize: 30.0,
                 ),
               ),
@@ -38,13 +38,13 @@ class DetailScreen extends StatelessWidget {
                   ),
                   Column(
                     children: <Widget>[
-                      Icon(Icons.access_time),
+                      const Icon(Icons.access_time),
                       Text(place.time),
                     ],
                   ),
                   Column(
                     children: <Widget>[
-                      Icon(Icons.attach_money),
+                      const Icon(Icons.attach_money),
                       Text(place.ticket),
                     ],
                   ),
@@ -56,7 +56,7 @@ class DetailScreen extends StatelessWidget {
               child: Text(
                 place.description,
                 textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 16.0),
+                style: const TextStyle(fontSize: 16.0),
               ),
             ),
             Container(
@@ -66,20 +66,15 @@ class DetailScreen extends StatelessWidget {
                 children: <Widget>[
                   Padding(
                     padding: const EdgeInsets.all(4.0),
-                    child: Image.network(
-                        'https://media-cdn.tripadvisor.com/media/photo-m/1280/16/a9/33/43/liburan-di-farmhouse.jpg'),
+                    child: Image.asset(place.gallery[0]),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(4.0),
-                    child: Image.asset('assets/images/monkasel_1.jpeg'),
+                    child: Image.asset(place.gallery[1]),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(4.0),
-                    child: Image.asset('assets/images/monkasel_2.png'),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(4.0),
-                    child: Image.asset('assets/images/monkasel_3.jpg'),
+                    child: Image.asset(place.gallery[2]),
                   ),
                 ],
               ),
