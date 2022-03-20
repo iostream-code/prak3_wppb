@@ -1,66 +1,39 @@
 import 'package:flutter/material.dart';
-import 'package:prak3_wppb/detail_screen.dart';
+import 'package:prak3_wppb/done_place_list.dart';
 import 'package:prak3_wppb/model/place_list.dart';
+import 'package:prak3_wppb/tourism_list.dart';
 
-class MainScreen extends StatelessWidget {
+class MainScreen extends StatefulWidget {
   const MainScreen({Key? key}) : super(key: key);
+
+  @override
+  _MainScreenState createState() => _MainScreenState();
+}
+
+class _MainScreenState extends State<MainScreen> {
+  final List<PlaceList> doneTourismPlaceList = [];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'Wisata Surabaya',
-        ),
-      ),
-      body: ListView.builder(
-        itemBuilder: (context, index) {
-          final PlaceList place = tourismPlaceList[index];
-          return InkWell(
-            onTap: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return DetailScreen(place: place);
-              }));
+        title: const Text('Wisata Surabaya'),
+        actions: <Widget>[
+          IconButton(
+            icon: const Icon(Icons.done_outline),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) {
+                  return DonePlaceList(
+                      doneTourismPlaceList: doneTourismPlaceList);
+                }),
+              );
             },
-            child: listItem(place),
-          );
-        },
-        itemCount: tourismPlaceList.length,
-      ),
-    );
-  }
-
-  Widget listItem(PlaceList place) {
-    return Card(
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Expanded(
-            flex: 1,
-            child: Image.asset(place.imageAsset),
-          ),
-          Expanded(
-            flex: 2,
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
-                  Text(
-                    place.name,
-                    style: const TextStyle(fontSize: 16.0),
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  Text(place.location),
-                ],
-              ),
-            ),
           ),
         ],
       ),
+      body: TourismList(doneTourismPlaceList: doneTourismPlaceList),
     );
   }
 }
